@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Final tutorial</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Fatal Police Shootings from 2015 to 2020 </title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14240,6 +14240,65 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+
+  <h1><b>Fatal Police Shootings from 2015 to 2020</b></h1>
+  <p> <b> made by Ronald Lagos </b> </p>
+  
+  <h2> Introduction</h2>
+  
+  <p> There has been political/social turnmoil this year, aside from a virus
+      and outrageous presidential elections a controversial topic has been Black Lives Matter.
+      While the name itself isn't something that should be debated people have made this a political issue too.
+      In Fox news people such as <i>Tucker Carlson</i> say that "If we're going to survive as a country, we must defeat Black Lives Matter" treating
+      the movement as a fascist group. Meanwhile, people on CNN such as anchor <i>Don Lemon</i> believe that 
+      "Black Lives Matters is about police brutality not black on black crime; black people face discrimination everyday." According to an article in 
+      <i>prnewswire</i> there is a about 63% of Democrats believe "Black Lives Matter" and 
+      87% of Republicans believe that "All Lives Matter."  </p>
+  
+  <h3>So what does this leave us with?</h3>
+  <p> This has left people confused, angry, anxious, afraid, and annoyed. Everyone has different opinions on every topic and <b>that's okay</b>
+  but in times like these we can trust one thing and that is data. Lucky for us the Washington Post has gathered data of fatal police shootings 
+  from 2015 to 2020. Some may argue that Washington Post is very liberal. However, data is data. We are going to check out which race has gone through the most 
+  fatal shootings in the past 5 years. This data has the race of deceased, circumstances of the shooting, whether the person was armed, whether the victim was experiencing a mental health crisis, and others.
+   </p>
+  
+  <p> <i>We are not going to make any conclusions we are just interpreting the data that is given</i></p>
+  
+  <p><b>Required Tools </b></p>
+  <ul>
+      <li>requests</li>
+      <li>pandas</li>
+      <li>numpy</li>
+      <li>bs4</li>
+      <li>matplotlib.pyplot</li>
+      <li>sklearn</li> 
+      <li>gmaps</li>
+      <li>ipywidgets.embed</li>
+      <li>tabulate</li>
+      <li>folium</li>
+      <li>geopy.geocoders</li>
+      <p> We highly recommend using this resource to learn how to import libraries in to your python code https://www.digitalocean.com/community/tutorials/how-to-import-modules-in-python-3 </p>   
+  </ul>
+
+  <h3>Data Collection</h3>
+<p>Here we will be getting the data from kaggle a public source for data. The dataset starts on January 1st, 2015. 
+    Once every required tool is imported into the program. Below is a picture as to what each of the libraries is going to do to our code and how it is going to help us
+    <ul>
+        <li><b>requests:</b> Requests will allow you to send HTTP/1.1 requests using Python, we will use it to request data</li>
+        <li><b>pandas:</b> handle the vast majority of typical use cases in finance, statistics, social science, and many areas of engineering. We will use it to gather data.</li>
+        <li><b>numpy:</b> NumPy is a Python library used for working with arrays, it also has functions for working in domain of linear algebra, fourier transform, and matrices. We can use this to.</li>
+        <li><b>bs4:</b> This pulls out data out of HTML.</li>
+        <li><b>matplotlib.pyplot:</b> This helps matplotlib work like matlab; more resources about matlab can be found here, https://www.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav </li>
+        <li><b>sklearn:</b> Open source machine learning libraries in Python. </li> 
+        <li><b>gmaps:</b> is a google plug in for embedding Google maps in Jupyter notebooks. </li>
+        <li><b>ipywidgets.embed:</b> Jupyter interactive widgets.</li>
+        <li><b>tabulate:</b> Helps print small tables without the hassle, transforms data into tables.</li>
+        <li><b>folium:</b>  Helps visualize data in Python through leaflet maps</li>
+        <li><b>geopy.geocoders:</b> Helps Python developers locate coordinates of addresses and locations.</li>  
+
+    </ul> 
+</p>
+
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14265,6 +14324,11 @@ a.anchor-link {
 </div>
 </div>
 
+<p>
+  Below, the <i>get_csv</i> function will print out all of the data. We are going to get a data frame here and as you can see there are a lot of unnecessary columns. It is a really long list when all we really care about for this project is the race, age, and location of the person;
+  once we continue to data processing we can clean the data. 
+</p>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14281,7 +14345,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-
+<p>Lets call the function and get the table with all of the data</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -19657,6 +19721,14 @@ a.anchor-link {
 </div>
 
 </div>
+<h3>Data Processing</h3>
+<p> Since we have many columns that we won't be using we will <i>tidy up</i> the data to it is easier 
+to analyze. Since we will be altering the structure of a Dataframe this is considered <i> Data Wrangling</i>. Below is the code that shows us how to tidy it up. 
+</p>
+<p>Here we simply need the race of the person, age and year the incident happened. Below is the result of that once we tipy up the data into what is useful to us.
+    To make it more a lot more efficient and easily recognizable we will convert the race letter into the word <i>H = Hispanic
+    W = White B = Black </i> also we have switched empty parts of the table with the word <i>nan</i>
+</p>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -19692,7 +19764,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-
+<p>We call the get_new_csv function</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30411,6 +30483,16 @@ a.anchor-link {
 
 </div>
 
+<h3>Exploratory Analysis and Data Visualization</h3>
+<p>
+This is the Exploratory Analysis and Visualization stage of the data life cycle where 
+we attempt to plot our data in order to observe potential trends or correlations. Keeping in mind that correlation does not mean causation. 
+</p>
+<p>
+    This is a bar graph that will tell us what age races (any) were in the most fatal shots by police. As we can see 
+    the age that people got fatally shot by police the most is age of 25 years old
+</p>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30428,6 +30510,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">

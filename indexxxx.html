@@ -30,23 +30,42 @@ fatal shootings in the past 5 years. This data has the race of deceased, circums
 
 <p><b>Required Tools </b></p>
 <ul>
-    <li>pandas</li>
     <li>requests</li>
-    <li>html5lib</li>
-    <li>os.path</li>
+    <li>pandas</li>
     <li>numpy</li>
-    <li>matplotlib.pyplot</li> 
+    <li>bs4</li>
+    <li>matplotlib.pyplot</li>
+    <li>sklearn</li> 
+    <li>gmaps</li>
+    <li>ipywidgets.embed</li>
+    <li>tabulate</li>
+    <li>folium</li>
+    <li>geopy.geocoders</li>
     <p> We highly recommend using this resource to learn how to import libraries in to your python code https://www.digitalocean.com/community/tutorials/how-to-import-modules-in-python-3 </p>   
 </ul>
 
 <h3>Data Collection</h3>
 <p>Here we will be getting the data from kaggle a public source for data. The dataset starts on January 1st, 2015. 
-    Once every required tool is imported into the program. Below is a picture as to what each of the libraries is going to do to our code and how it is going to help us 
-</p>
-(show how it will be used) We are going to get a data frame here and as you can see there are a lot of unnecessary columns
-(talk about how csv file will be concactenated)
-<p>
+    Once every required tool is imported into the program. Below is a picture as to what each of the libraries is going to do to our code and how it is going to help us
+    <ul>
+        <li><b>requests:</b> Requests will allow you to send HTTP/1.1 requests using Python, we will use it to request data</li>
+        <li><b>pandas:</b> handle the vast majority of typical use cases in finance, statistics, social science, and many areas of engineering. We will use it to gather data.</li>
+        <li><b>numpy:</b> NumPy is a Python library used for working with arrays, it also has functions for working in domain of linear algebra, fourier transform, and matrices. We can use this to.</li>
+        <li><b>bs4:</b> This pulls out data out of HTML.</li>
+        <li><b>matplotlib.pyplot:</b> This helps matplotlib work like matlab; more resources about matlab can be found here, https://www.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav </li>
+        <li><b>sklearn:</b> Open source machine learning libraries in Python. </li> 
+        <li><b>gmaps:</b> is a google plug in for embedding Google maps in Jupyter notebooks. </li>
+        <li><b>ipywidgets.embed:</b> Jupyter interactive widgets.</li>
+        <li><b>tabulate:</b> Helps print small tables without the hassle, transforms data into tables.</li>
+        <li><b>folium:</b>  Helps visualize data in Python through leaflet maps</li>
+        <li><b>geopy.geocoders:</b> Helps Python developers locate coordinates of addresses and locations.</li>  
 
+    </ul> 
+</p>
+
+<p>
+    We are going to get a data frame here and as you can see there are a lot of unnecessary columns. It is a really long list when all we really care about for this project is the race, age, and location of the person;
+    once we continue to data processing we can clean the data. 
 </p>
 <h3>Data Processing</h3>
 <p> Since we have many columns that we won't be using we will <i>tidy up</i> the data to it is easier 
