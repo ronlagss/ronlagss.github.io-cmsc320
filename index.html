@@ -30488,10 +30488,6 @@ to analyze. Since we will be altering the structure of a Dataframe this is consi
 This is the Exploratory Analysis and Visualization stage of the data life cycle where 
 we attempt to plot our data in order to observe potential trends or correlations. Keeping in mind that correlation does not mean causation. 
 </p>
-<p>
-    This is a bar graph that will tell us what age races (any) were in the most fatal shots by police. As we can see 
-    the age that people got fatally shot by police the most is age of 25 years old
-</p>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -30510,18 +30506,10 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
+<p>
+  This is a bar graph that will tell us what age races (any) were in the most fatal shots by police. As we can see 
+  the age that people got fatally shot by police the most is age of 25 years old
+</p>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -30561,7 +30549,7 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 
 </div>
-
+<p>This function is the location vs race</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30579,7 +30567,7 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 </div>
 </div>
-
+<p>Here we can see that the location where most people die of fatal police shootings is California, since 2015</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30618,7 +30606,7 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 
 </div>
-
+<p>Next we will look at a function that outputs a pie chart. We group it by race and simply call plot.pie </p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30635,7 +30623,7 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 </div>
 </div>
-
+<p>Below I made two pie charts one based on location and another based on age. Ther isn't much difference in those but we can see that the pie charts indicate the race that is killed the most in the US since 2015 are white people</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30674,7 +30662,7 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 
 </div>
-
+<p>The function <i>get_state_location</i> will help us get the states and make a table out of it </p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -30696,6 +30684,7 @@ we attempt to plot our data in order to observe potential trends or correlations
 </div>
 </div>
 
+<p>We can use that function above as a helper function for <i>draw_heat_map</i> this will output a table that will have all cities in California where people have been fatally shot by police. We can also get the count of which race was the majority in California.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -31154,6 +31143,11 @@ White        15
 </div>
 
 </div>
+<h3><b>Observations</b></h3>
+<p>
+    During this phase of the Data Lifecycle, we attempt to perform various modeling techniques such as linear regression and logistic regression.
+We will perforn a linear regression race vs age. X-axis being age and Y axis is race (not specified)
+</p>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -31222,6 +31216,12 @@ White        15
 </div>
 
 </div>
+<p>Some observations and questions that come up with these finding are very surprising because recent media outlets and people everywhere have claimed that African Americans was the race that is most fatally shot  by cops. However, when looking at the data we can see that it isn't necessarily true. The data 
+  makes it seem like white people have been the most fatally shot by cops around the US. Of course, there is always room for error and data complications. One can conclude from this that whites are the most fatally shot in the US, according to the pie chart;
+California has the most people that are fatally shot by cops, these people are hispanic, the second highest are black people then white then asian. 
+Accorind to the bar graphs many of these people are around 25 year olds and that is the average age these people die. There are always exceptions because they all had different causes of death but this was not included here. 
+ </p>
+ <p><i><b>With that said, can we really trust media?</b></i></p>
 </body>
 
 
